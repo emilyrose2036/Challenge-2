@@ -4,13 +4,17 @@ ScriptsOnlyBuild:
     - CameraScript
     - EnemyMover
     - PlayerController
-    - Rotator
+    - SoundEffects
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
+    UnityEditor.TestRunner.dll:
+    - UnityEditor.TestTools.TestRunner.TestListCacheData
     UnityEngine.UI.dll:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.StandaloneInputModule
@@ -18,7 +22,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Text
   sceneClasses:
-    Assets/challenge2.unity:
+    Assets/finalgame.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -70,9 +74,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 9604}
     - Class: 114
-      Script: {instanceID: 9724}
-    - Class: 114
       Script: {instanceID: 9916}
+    - Class: 114
+      Script: {instanceID: 20190}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -136,7 +140,7 @@ ScriptsOnlyBuild:
     className: ActivationTrack
   - hash:
       serializedVersion: 2
-      Hash: f59a754a24d825a60dd5fbde43f31348
+      Hash: 43488d4cf2a193d92bafc3ec5ef21f59
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerController
@@ -758,7 +762,25 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 788412088ded14b4c00d7a3a1612b878
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SoundEffects
+  - hash:
+      serializedVersion: 2
+      Hash: de7d6a5820dded6c7f75780e98f1dc41
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Enemy
+  - hash:
+      serializedVersion: 2
+      Hash: afc5b93a7b192de2dcb3832fe35a5c7e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: mover
   platform: 19
   scenePathNames:
-  - Assets/challenge2.unity
-  playerPath: C:/Users/smoke/Documents/Challenge2Build/New Unity Project.exe
+  - Assets/finalgame.unity
+  playerPath: C:/Users/smoke/Documents/FinalGame/New Unity Project.exe

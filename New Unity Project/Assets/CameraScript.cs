@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraScript : MonoBehaviour
 {
@@ -19,6 +20,10 @@ public class CameraScript : MonoBehaviour
         if (Input.GetKey("escape"))
         {
             Application.Quit();
+        }
+        if (Input.GetKey("R"))
+        {
+            SceneManager.LoadScene("finalgame");
         }
     }
     // Update is called once per frame

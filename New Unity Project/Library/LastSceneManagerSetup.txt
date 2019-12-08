@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/challenge2.unity
+- path: Assets/finalgame.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

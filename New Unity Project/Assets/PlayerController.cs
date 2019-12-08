@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
     public Text countText;
     public Text winText;
     public Text livesText;
+    public Text timeText;
     private int count;
     private int lives;
     public AudioSource musicSource;
     public AudioClip musicClipOne;
     public AudioClip musicClipTwo;
+    private float timeLeft = 75.0f;
     private bool facingRight = true;
     Animator anim;
 
@@ -33,6 +35,10 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        timeLeft -= Time.deltaTime;
+        timeText.text = "Time:" + (timeLeft).ToString("0");
+        if (timeLeft < 0)
+            GameOver();
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
             anim.SetInteger("State", 2);
@@ -70,6 +76,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
         void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Coin"))
@@ -82,6 +89,12 @@ public class PlayerController : MonoBehaviour
         {
             other.gameObject.SetActive(false);
             lives = lives - 1;
+            SetCountText();
+        }
+        if (other.gameObject.CompareTag("Powerup"))
+        {
+            other.gameObject.SetActive(false);
+            lives = lives + 1;
             SetCountText();
         }
     }
@@ -103,7 +116,7 @@ public class PlayerController : MonoBehaviour
         }
         if (count == 4)
         {
-            transform.position = new Vector2(73.4f, 3.1f);
+            transform.position = new Vector2(56.61f, 3.78f);
             lives = 3;
             livesText.text = "Lives: " + lives.ToString();
         }
@@ -132,6 +145,11 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetInteger("State", 1);
         }
+    }
+    public void GameOver()
+    {
+        winText.text = "You lose!";
+        Destroy(this);
     }
     void Flip()
     {
